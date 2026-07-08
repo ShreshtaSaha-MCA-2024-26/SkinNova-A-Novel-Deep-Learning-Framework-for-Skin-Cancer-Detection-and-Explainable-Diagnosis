@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}SkinNova | About{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO ================= -->
+
+<section class="about-hero">
+  <div class="about-container">
+    <span class="about-badge">
+      <i class="fa-solid fa-circle-info"></i>
+      About SkinNova
+    </span>
+
+    <h1>Novel Deep Learning Framework for Skin Cancer Detection</h1>
+
+    <p>
+      SkinNova is an explainable AI-powered clinical decision support system
+      designed for skin cancer detection, lesion classification, visual
+      explanation, confidence scoring, and clinical recommendation.
+    </p>
+  </div>
+</section>
+
+<!-- ================= WHAT IS SKINNOVA ================= -->
+
+<section class="about-intro">
+  <div class="about-container">
+    <div class="about-grid">
+
+      <div class="about-image" data-aos="fade-right">
+        <img src="{{ url_for('static', filename='images/about.png') }}" alt="SkinNova AI">
+      </div>
+
+      <div class="about-content" data-aos="fade-left">
+        <span class="section-label">What is SkinNova?</span>
+
+        <h2>AI-Assisted Skin Cancer Diagnosis with Explainability</h2>
+
+        <p>
+          SkinNova is not only a skin cancer classifier. It is a complete
+          research-based AI framework that combines image preprocessing,
+          lesion segmentation, hybrid deep learning, explainable AI, confidence
+          estimation, and clinical decision support.
+        </p>
+
+        <div class="about-points">
+          <div><i class="fa-solid fa-check"></i> Seven-class lesion classification</div>
+          <div><i class="fa-solid fa-check"></i> Grad-CAM and LIME explanation</div>
+          <div><i class="fa-solid fa-check"></i> Hybrid EfficientNetV2 + ViT model</div>
+          <div><i class="fa-solid fa-check"></i> AI-assisted diagnostic report</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISION MISSION ================= -->
+
+<section class="vision-mission">
+  <div class="about-container">
+
+    <div class="vm-grid">
+
+      <div class="vm-card" data-aos="zoom-in">
+        <i class="fa-solid fa-eye"></i>
+        <h3>Vision</h3>
+        <p>
+          To build a transparent and intelligent AI healthcare system that
+          supports early skin cancer diagnosis and improves clinician trust
+          through explainable decision-making.
+        </p>
+      </div>
+
+      <div class="vm-card" data-aos="zoom-in" data-aos-delay="150">
+        <i class="fa-solid fa-bullseye"></i>
+        <h3>Mission</h3>
+        <p>
+          To develop a robust deep learning framework capable of accurate
+          skin lesion classification while providing visual explanation,
+          confidence score, and clinical recommendation.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PROBLEM STATEMENT ================= -->
+
+<section class="problem-section">
+  <div class="about-container">
+
+    <div class="section-heading text-center">
+      <span class="section-label">Problem Statement</span>
+      <h2>Why SkinNova is Needed?</h2>
+      <p>
+        Skin cancer diagnosis depends heavily on clinical expertise and
+        timely evaluation. Existing AI systems often lack transparency,
+        making them difficult to trust in medical environments.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+
+      <div class="problem-card" data-aos="fade-up">
+        <i class="fa-solid fa-clock"></i>
+        <h4>Delayed Diagnosis</h4>
+        <p>Late detection can reduce treatment effectiveness and increase health risks.</p>
+      </div>
+
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-user-doctor"></i>
+        <h4>Expert Dependency</h4>
+        <p>Diagnosis depends on specialist availability and clinical experience.</p>
+      </div>
+
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-box"></i>
+        <h4>Black-Box AI</h4>
+        <p>Many deep learning models provide prediction without explanation.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= AIM OBJECTIVES ================= -->
+
+<section class="objectives-section">
+  <div class="about-container">
+
+    <div class="section-heading text-center">
+      <span class="section-label">Aim & Objectives</span>
+      <h2>Research Goals of SkinNova</h2>
+    </div>
+
+    <div class="objectives-grid">
+
+      <div class="objective-card main-objective" data-aos="fade-right">
+        <h3>Aim</h3>
+        <p>
+          To develop a novel explainable deep learning framework for accurate
+          skin cancer detection and diagnosis from dermoscopic images while
+          providing transparent visual explanations and clinical recommendation.
+        </p>
+      </div>
+
+      <div class="objective-card" data-aos="fade-left">
+        <h3>Primary Objectives</h3>
+        <ul>
+          <li>Develop automated skin cancer detection system</li>
+          <li>Classify seven types of skin lesions</li>
+          <li>Improve diagnostic accuracy using hybrid AI</li>
+          <li>Support early clinical diagnosis</li>
+        </ul>
+      </div>
+
+      <div class="objective-card" data-aos="fade-right">
+        <h3>Explainability Objectives</h3>
+        <ul>
+          <li>Generate Grad-CAM heatmaps</li>
+          <li>Generate LIME explanations</li>
+          <li>Highlight responsible lesion regions</li>
+          <li>Increase clinician trust</li>
+        </ul>
+      </div>
+
+      <div class="objective-card" data-aos="fade-left">
+        <h3>Innovation Objectives</h3>
+        <ul>
+          <li>Remove hair and artifacts</li>
+          <li>Segment lesion before classification</li>
+          <li>Use cross-dataset validation</li>
+          <li>Generate AI diagnostic report</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= NOVELTY ================= -->
+
+<section class="novelty-section">
+  <div class="about-container">
+
+    <div class="section-heading text-center">
+      <span class="section-label">Novelty</span>
+      <h2>What Makes SkinNova Novel?</h2>
+    </div>
+
+    <div class="novelty-grid">
+
+      <div class="novelty-card"><span>01</span><h4>Image Quality Assessment</h4></div>
+      <div class="novelty-card"><span>02</span><h4>Hair & Artifact Removal</h4></div>
+      <div class="novelty-card"><span>03</span><h4>CLAHE Enhancement</h4></div>
+      <div class="novelty-card"><span>04</span><h4>Lesion Segmentation</h4></div>
+      <div class="novelty-card"><span>05</span><h4>Hybrid Deep Learning</h4></div>
+      <div class="novelty-card"><span>06</span><h4>Explainable AI</h4></div>
+      <div class="novelty-card"><span>07</span><h4>Confidence Score</h4></div>
+      <div class="novelty-card"><span>08</span><h4>Clinical Recommendation</h4></div>
+      <div class="novelty-card"><span>09</span><h4>Cross-Dataset Validation</h4></div>
+      <div class="novelty-card"><span>10</span><h4>Interactive Dashboard</h4></div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WORKFLOW ================= -->
+
+<section class="about-workflow">
+  <div class="about-container">
+
+    <div class="section-heading text-center">
+      <span class="section-label">Workflow</span>
+      <h2>SkinNova Diagnosis Pipeline</h2>
+    </div>
+
+    <div class="workflow-row">
+
+      <div class="workflow-box"><i class="fa-solid fa-upload"></i><p>Image Upload</p></div>
+      <div class="workflow-box"><i class="fa-solid fa-wand-magic-sparkles"></i><p>Preprocessing</p></div>
+      <div class="workflow-box"><i class="fa-solid fa-object-group"></i><p>Segmentation</p></div>
+      <div class="workflow-box"><i class="fa-solid fa-brain"></i><p>Classification</p></div>
+      <div class="workflow-box"><i class="fa-solid fa-eye"></i><p>XAI</p></div>
+      <div class="workflow-box"><i class="fa-solid fa-file-medical"></i><p>Report</p></div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DATASETS ================= -->
+
+<section class="dataset-about">
+  <div class="about-container">
+
+    <div class="section-heading text-center">
+      <span class="section-label">Datasets</span>
+      <h2>Datasets Used in SkinNova</h2>
+    </div>
+
+    <div class="dataset-grid">
+
+      <div class="dataset-box">
+        <h3>HAM10000</h3>
+        <p>Primary training dataset containing 10,000+ dermoscopic images and seven lesion classes.</p>
+      </div>
+
+      <div class="dataset-box">
+        <h3>ISIC Archive</h3>
+        <p>Used for external validation and cross-dataset generalization testing.</p>
+      </div>
+
+      <div class="dataset-box">
+        <h3>PH2 / PAD-UFES-20</h3>
+        <p>Additional datasets for robustness testing and clinical variation analysis.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="about-cta">
+  <div class="about-container">
+    <div class="cta-box">
+      <h2>Start AI-Based Skin Lesion Analysis</h2>
+      <p>Upload a dermoscopic image and receive prediction, confidence score, XAI explanation, and report.</p>
+
+      <div class="cta-buttons">
+        <a href="{{ url_for('detect') }}">Start Detection</a>
+        <a href="{{ url_for('research') }}" class="outline-btn">Explore Research</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}

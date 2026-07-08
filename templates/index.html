@@ -1,0 +1,1819 @@
+{% extends "base.html" %}
+
+{% block title %}
+SkinNova | Home
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ==================================================
+                    HERO SECTION
+=================================================== -->
+
+<section class="skinnova-hero">
+
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+    <div class="hero-shape shape-3"></div>
+
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    AI Powered Clinical Decision Support
+                </div>
+
+                <h1 class="hero-title">
+                    <span>SkinNova</span>
+                    Novel Deep Learning Framework for
+                    <strong>Skin Cancer Detection</strong>
+                </h1>
+
+                <p class="hero-text">
+                    SkinNova combines Deep Learning, Computer Vision,
+                    Lesion Segmentation, Grad-CAM, LIME, and Explainable AI
+                    to support transparent and reliable skin cancer diagnosis
+                    from dermoscopic images.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('detect') }}" class="hero-btn primary-btn">
+                        <i class="fa-solid fa-upload"></i>
+                        Start Detection
+                    </a>
+
+                    <a href="{{ url_for('research') }}" class="hero-btn secondary-btn">
+                        <i class="fa-solid fa-book-open"></i>
+                        Explore Research
+                    </a>
+                </div>
+
+                <div class="hero-tech">
+                    <span>EfficientNetV2</span>
+                    <span>Vision Transformer</span>
+                    <span>U-Net</span>
+                    <span>Grad-CAM</span>
+                    <span>LIME</span>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat-card">
+                        <i class="fa-solid fa-virus"></i>
+                        <h3>7</h3>
+                        <p>Lesion Classes</p>
+                    </div>
+
+                    <div class="hero-stat-card">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>10K+</h3>
+                        <p>Images</p>
+                    </div>
+
+                    <div class="hero-stat-card">
+                        <i class="fa-solid fa-brain"></i>
+                        <h3>XAI</h3>
+                        <p>Explainability</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+
+                <div class="hero-visual-wrapper">
+
+                    <div class="hero-image-card">
+                        <img
+                            src="{{ url_for('static', filename='images/index-banner.png') }}"
+                            alt="SkinNova AI Skin Cancer Detection"
+                            class="hero-main-image"
+                        />
+                    </div>
+
+                    <div class="floating-card floating-card-1">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <div>
+                            <h6>Clinical Support</h6>
+                            <p>AI Assisted Diagnosis</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-2">
+                        <i class="fa-solid fa-eye"></i>
+                        <div>
+                            <h6>Explainable AI</h6>
+                            <p>Grad-CAM + LIME</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-3">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div>
+                            <h6>Confidence Score</h6>
+                            <p>Risk Assessment</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ==================================================
+                ABOUT / VISION SECTION
+=================================================== -->
+
+<section class="about-vision-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT IMAGE -->
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="about-vision-image-box">
+
+                    <img
+                        src="{{ url_for('static', filename='images/support.png') }}"
+                        alt="SkinNova AI Clinical Decision Support"
+                        class="about-vision-image"
+                    />
+
+                    <div class="about-floating-box">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <div>
+                            <h5>Clinical Decision Support</h5>
+                            <p>Transparent AI-assisted diagnosis</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <div class="section-badge">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About SkinNova
+                </div>
+
+                <h2 class="section-title">
+                    A Novel Explainable AI Framework for
+                    <span>Skin Cancer Diagnosis</span>
+                </h2>
+
+                <p class="section-description">
+                    SkinNova is designed as a complete medical AI framework,
+                    not just a basic classifier. It integrates image quality
+                    assessment, preprocessing, lesion segmentation, hybrid deep
+                    learning, explainable AI, confidence estimation, and
+                    clinical recommendation into one intelligent diagnostic
+                    pipeline.
+                </p>
+
+                <div class="about-feature-list">
+
+                    <div class="about-feature">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Detects and classifies seven skin lesion categories</span>
+                    </div>
+
+                    <div class="about-feature">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Uses EfficientNetV2 and Vision Transformer architecture</span>
+                    </div>
+
+                    <div class="about-feature">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Provides Grad-CAM and LIME visual explanations</span>
+                    </div>
+
+                    <div class="about-feature">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Generates confidence score and clinical recommendation</span>
+                    </div>
+
+                </div>
+
+                <a href="{{ url_for('about') }}" class="about-btn">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ==================================================
+            RESEARCH INNOVATION SECTION
+=================================================== -->
+
+<section class="innovation-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-lightbulb"></i>
+                Research Innovation
+            </div>
+
+            <h2 class="section-title">
+                Novel Contributions of
+                <span>SkinNova Framework</span>
+            </h2>
+
+            <p class="section-description">
+                Unlike conventional skin cancer detection systems, SkinNova
+                integrates preprocessing, segmentation, hybrid deep learning,
+                explainable AI, confidence estimation, and clinical decision
+                support into one intelligent framework.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mt-5">
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <h4>AI Image Quality Assessment</h4>
+
+                    <p>
+                        Automatically rejects blurry and poor-quality
+                        dermoscopic images before prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+
+                    <h4>Hair & Artifact Removal</h4>
+
+                    <p>
+                        Removes hairs and unwanted artifacts using the
+                        Dull Razor Algorithm.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+
+                    <h4>Image Enhancement</h4>
+
+                    <p>
+                        CLAHE and Bilateral Filtering improve lesion visibility
+                        while preserving fine details.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-object-group"></i>
+                    </div>
+
+                    <h4>Lesion Segmentation</h4>
+
+                    <p>
+                        U-Net isolates the lesion region before classification,
+                        reducing background noise.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h4>Hybrid Deep Learning</h4>
+
+                    <p>
+                        EfficientNetV2 and Vision Transformer work together
+                        for robust local and global feature extraction.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <h4>Explainable AI</h4>
+
+                    <p>
+                        Grad-CAM and LIME explain every prediction,
+                        improving transparency and clinician trust.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h4>Confidence Estimation</h4>
+
+                    <p>
+                        Displays confidence scores for every prediction
+                        to support informed medical decisions.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+
+                    <h4>Clinical Recommendation</h4>
+
+                    <p>
+                        Generates AI-assisted risk assessment and
+                        dermatologist recommendations.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="innovation-card">
+
+                    <div class="innovation-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h4>Cross Dataset Validation</h4>
+
+                    <p>
+                        Trained on HAM10000 and validated using ISIC
+                        to demonstrate strong generalization capability.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ==================================================
+                SYSTEM WORKFLOW SECTION
+=================================================== -->
+
+<section class="workflow-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-diagram-project"></i>
+                System Workflow
+            </div>
+
+            <h2 class="section-title">
+                How <span>SkinNova Works</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova follows a complete AI diagnosis pipeline from image
+                upload to explainable prediction, confidence scoring, and
+                clinical recommendation generation.
+            </p>
+
+        </div>
+
+        <div class="workflow-wrapper">
+
+            <div class="workflow-line"></div>
+
+            <div class="workflow-item" data-aos="fade-right">
+                <div class="workflow-number">01</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-upload"></i>
+                    <h4>Input Dermoscopic Image</h4>
+                    <p>User uploads a dermoscopic skin lesion image through the web dashboard.</p>
+                </div>
+            </div>
+
+            <div class="workflow-item" data-aos="fade-left">
+                <div class="workflow-number">02</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-image"></i>
+                    <h4>Image Quality Assessment</h4>
+                    <p>The system checks blur, resolution, noise, and poor-quality image conditions.</p>
+                </div>
+            </div>
+
+            <div class="workflow-item" data-aos="fade-right">
+                <div class="workflow-number">03</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h4>Preprocessing & Enhancement</h4>
+                    <p>Hair removal, CLAHE, and bilateral filtering improve lesion visibility.</p>
+                </div>
+            </div>
+
+            <div class="workflow-item" data-aos="fade-left">
+                <div class="workflow-number">04</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-object-group"></i>
+                    <h4>Lesion Segmentation</h4>
+                    <p>U-Net or DeepLabV3+ isolates the lesion region from the background.</p>
+                </div>
+            </div>
+
+            <div class="workflow-item" data-aos="fade-right">
+                <div class="workflow-number">05</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-brain"></i>
+                    <h4>Hybrid Deep Learning</h4>
+                    <p>EfficientNetV2 extracts local features while Vision Transformer captures global context.</p>
+                </div>
+            </div>
+
+            <div class="workflow-item" data-aos="fade-left">
+                <div class="workflow-number">06</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-eye"></i>
+                    <h4>Explainable AI</h4>
+                    <p>Grad-CAM and LIME generate visual explanations for model predictions.</p>
+                </div>
+            </div>
+
+            <div class="workflow-item" data-aos="fade-right">
+                <div class="workflow-number">07</div>
+                <div class="workflow-content">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <h4>Clinical Report</h4>
+                    <p>The system produces prediction, confidence score, risk level, and recommendation.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ==================================================
+                    AI FEATURES SECTION
+=================================================== -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-star-of-life"></i>
+                Core AI Features
+            </div>
+
+            <h2 class="section-title">
+                Powerful Features for
+                <span>Explainable Diagnosis</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova provides intelligent medical image analysis with
+                transparency, confidence estimation, and clinical usability.
+            </p>
+
+        </div>
+
+        <div class="features-grid mt-5">
+
+            <div class="feature-card large-feature" data-aos="fade-up">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+
+                <h3>AI Skin Lesion Classification</h3>
+
+                <p>
+                    Classifies dermoscopic images into seven major skin lesion
+                    categories using a hybrid deep learning architecture.
+                </p>
+
+                <ul>
+                    <li>Melanoma</li>
+                    <li>Basal Cell Carcinoma</li>
+                    <li>Benign Keratosis</li>
+                    <li>Melanocytic Nevus</li>
+                </ul>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+
+                <h3>Grad-CAM Heatmap</h3>
+
+                <p>
+                    Highlights lesion regions that influenced the prediction,
+                    making the AI decision visually understandable.
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <h3>LIME Explanation</h3>
+
+                <p>
+                    Provides local interpretable explanations by showing
+                    important image regions for individual predictions.
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-percent"></i>
+                </div>
+
+                <h3>Confidence Score</h3>
+
+                <p>
+                    Displays prediction probability to help clinicians evaluate
+                    the reliability of AI-generated diagnosis.
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <h3>Risk Assessment</h3>
+
+                <p>
+                    Categorizes cases into low, moderate, or high-risk levels
+                    based on lesion type and model confidence.
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+
+                <h3>PDF Diagnostic Report</h3>
+
+                <p>
+                    Generates an AI-assisted report containing prediction,
+                    confidence, heatmap, risk level, and recommendation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+            MODEL PERFORMANCE SECTION
+=================================================== -->
+
+<section class="performance-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-chart-column"></i>
+                Model Performance
+            </div>
+
+            <h2 class="section-title">
+                AI Performance &
+                <span>Evaluation Metrics</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova has been evaluated using multiple medical AI
+                performance metrics to ensure reliable and clinically
+                meaningful predictions.
+            </p>
+
+        </div>
+
+        <div class="row mt-5 g-4">
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+
+                <div class="metric-card">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                    <h2>96.8%</h2>
+
+                    <h5>Accuracy</h5>
+
+                    <p>Overall classification accuracy on the testing dataset.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="metric-card">
+
+                    <i class="fa-solid fa-crosshairs"></i>
+
+                    <h2>95.9%</h2>
+
+                    <h5>Precision</h5>
+
+                    <p>Measures the percentage of correct positive predictions.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="metric-card">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    <h2>95.6%</h2>
+
+                    <h5>Recall</h5>
+
+                    <p>Measures the ability to correctly detect lesions.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+
+                <div class="metric-card">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    <h2>95.7%</h2>
+
+                    <h5>F1 Score</h5>
+
+                    <p>Balanced measure of precision and recall.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Graph Cards -->
+
+        <div class="row mt-5 g-4">
+
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="graph-card">
+
+                    <h4>
+                        <i class="fa-solid fa-chart-line"></i>
+                        Accuracy & Loss Curve
+                    </h4>
+
+                    <img
+                        src="{{ url_for('static', filename='images/graphs/accuracy_loss.png') }}"
+                        alt="Accuracy Graph"
+                        class="img-fluid"
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <div class="graph-card">
+
+                    <h4>
+                        <i class="fa-solid fa-chart-pie"></i>
+                        Confusion Matrix
+                    </h4>
+
+                    <img
+                        src="{{ url_for('static', filename='images/graphs/confusion_matrix.png') }}"
+                        alt="Confusion Matrix"
+                        class="img-fluid"
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="graph-card">
+
+                    <h4>
+                        <i class="fa-solid fa-wave-square"></i>
+                        ROC Curve
+                    </h4>
+
+                    <img
+                        src="{{ url_for('static', filename='images/graphs/roc_curve.png') }}"
+                        alt="ROC Curve"
+                        class="img-fluid"
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <div class="graph-card">
+
+                    <h4>
+                        <i class="fa-solid fa-table"></i>
+                        Classification Report
+                    </h4>
+
+                    <img
+                        src="{{ url_for('static', filename='images/graphs/classification_report.png') }}"
+                        alt="Classification Report"
+                        class="img-fluid"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- ==================================================
+            INTERACTIVE DASHBOARD SECTION
+=================================================== -->
+
+<section class="dashboard-preview-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-desktop"></i>
+                Interactive Dashboard
+            </div>
+
+            <h2 class="section-title">
+                Complete AI Diagnosis
+                <span>Dashboard Experience</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova provides a user-friendly dashboard where users can upload
+                dermoscopic images, receive predictions, view explainable heatmaps,
+                check confidence scores, and download AI-assisted reports.
+            </p>
+
+        </div>
+
+        <div class="dashboard-preview-wrapper mt-5" data-aos="zoom-in">
+
+            <div class="dashboard-browser">
+
+                <div class="browser-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>SkinNova AI Dashboard</p>
+                </div>
+
+                <div class="dashboard-screen">
+
+                    <div class="dashboard-left">
+
+                        <div class="upload-box">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <h4>Upload Dermoscopic Image</h4>
+                            <p>JPG, PNG, JPEG supported</p>
+                        </div>
+
+                        <div class="mini-result-card">
+                            <i class="fa-solid fa-microscope"></i>
+                            <div>
+                                <h5>Prediction</h5>
+                                <p>Melanoma</p>
+                            </div>
+                        </div>
+
+                        <div class="mini-result-card">
+                            <i class="fa-solid fa-percent"></i>
+                            <div>
+                                <h5>Confidence</h5>
+                                <p>98.7%</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-center">
+
+                        <div class="image-preview-card">
+                            <img
+                                src="{{ url_for('static', filename='images/preview.png') }}"
+                                alt="SkinNova Dashboard Preview"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-right">
+
+                        <div class="risk-card high-risk">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <h5>Risk Level</h5>
+                            <p>High Risk</p>
+                        </div>
+
+                        <div class="heatmap-card">
+                            <i class="fa-solid fa-fire"></i>
+                            <h5>Grad-CAM Heatmap</h5>
+                            <p>Lesion region highlighted</p>
+                        </div>
+
+                        <div class="report-card">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <h5>PDF Report</h5>
+                            <p>Download diagnostic report</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-actions text-center mt-5" data-aos="fade-up">
+            <a href="{{ url_for('dashboard') }}" class="dashboard-btn secondary-dashboard-btn">
+                <i class="fa-solid fa-chart-line"></i>
+                View Dashboard
+            </a>
+
+            <a href="{{ url_for('detect') }}" class="dashboard-btn primary-dashboard-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Start Detection
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ==================================================
+        DATASET & RESEARCH VALIDATION SECTION
+=================================================== -->
+
+<section class="dataset-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-database"></i>
+                Dataset & Validation
+            </div>
+
+            <h2 class="section-title">
+                Research Dataset &
+                <span>Cross-Dataset Validation</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova uses benchmark dermoscopic datasets for training,
+                testing, and external validation to improve robustness,
+                reduce dataset bias, and support real-world clinical reliability.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mt-5">
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+
+                <div class="dataset-card primary-dataset">
+
+                    <div class="dataset-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <h4>HAM10000</h4>
+
+                    <span class="dataset-tag">Primary Training Dataset</span>
+
+                    <p>
+                        Used as the main dataset for training and internal
+                        validation of the seven-class skin lesion classification model.
+                    </p>
+
+                    <ul>
+                        <li>10,000+ dermoscopic images</li>
+                        <li>Seven lesion categories</li>
+                        <li>Metadata-based class labels</li>
+                        <li>Suitable for multi-class classification</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="dataset-card">
+
+                    <div class="dataset-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h4>ISIC Archive</h4>
+
+                    <span class="dataset-tag">External Validation</span>
+
+                    <p>
+                        Used to evaluate cross-dataset generalization and test
+                        whether the trained model performs reliably on unseen data.
+                    </p>
+
+                    <ul>
+                        <li>Independent dermoscopic images</li>
+                        <li>Challenge-based benchmark data</li>
+                        <li>External model evaluation</li>
+                        <li>Generalization analysis</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="dataset-card">
+
+                    <div class="dataset-icon">
+                        <i class="fa-solid fa-vial-circle-check"></i>
+                    </div>
+
+                    <h4>PH2 / PAD-UFES-20</h4>
+
+                    <span class="dataset-tag">Additional Research Testing</span>
+
+                    <p>
+                        Additional datasets can be used for robustness testing,
+                        real-world variation analysis, and clinical-style evaluation.
+                    </p>
+
+                    <ul>
+                        <li>Dataset diversity testing</li>
+                        <li>Clinical image variation</li>
+                        <li>Model robustness study</li>
+                        <li>Bias reduction support</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="validation-box mt-5" data-aos="zoom-in">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-5">
+
+                    <div class="validation-visual">
+
+                        <div class="validation-node train-node">
+                            <i class="fa-solid fa-brain"></i>
+                            <h5>Train</h5>
+                            <p>HAM10000</p>
+                        </div>
+
+                        <div class="validation-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+
+                        <div class="validation-node test-node">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h5>Test</h5>
+                            <p>ISIC / PH2</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-7">
+
+                    <div class="validation-content">
+
+                        <h3>Cross-Dataset Validation Strategy</h3>
+
+                        <p>
+                            The proposed SkinNova framework follows a research-oriented
+                            evaluation strategy where the model is trained on HAM10000
+                            and externally tested on ISIC, PH2, or PAD-UFES-20 datasets.
+                            This helps verify whether the model is learning meaningful
+                            lesion features instead of memorizing dataset-specific patterns.
+                        </p>
+
+                        <div class="validation-points">
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Reduces dataset-specific bias
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Measures real-world generalization
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Supports research-level evaluation
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Improves clinical trustworthiness
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ==================================================
+                TECHNOLOGY STACK SECTION
+=================================================== -->
+
+<section class="tech-stack-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-microchip"></i>
+                Technology Stack
+            </div>
+
+            <h2 class="section-title">
+                Technologies Behind
+                <span>SkinNova</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova is developed using modern AI, computer vision,
+                explainable AI, and web technologies to create a complete
+                medical research-based diagnosis support system.
+            </p>
+
+        </div>
+
+        <div class="tech-stack-grid mt-5">
+
+            <div class="tech-stack-card" data-aos="zoom-in">
+                <i class="fa-brands fa-python"></i>
+                <h4>Python</h4>
+                <p>Core programming language for AI model development.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-brain"></i>
+                <h4>TensorFlow / Keras</h4>
+                <p>Deep learning framework for model training and inference.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-camera"></i>
+                <h4>OpenCV</h4>
+                <p>Image preprocessing, enhancement, and artifact removal.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in">
+                <i class="fa-solid fa-network-wired"></i>
+                <h4>EfficientNetV2</h4>
+                <p>CNN backbone for efficient local feature extraction.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-eye"></i>
+                <h4>Vision Transformer</h4>
+                <p>Captures global contextual information from lesion images.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-object-group"></i>
+                <h4>U-Net</h4>
+                <p>Lesion segmentation model for isolating affected regions.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in">
+                <i class="fa-solid fa-fire"></i>
+                <h4>Grad-CAM</h4>
+                <p>Visual heatmap explanation for model decision transparency.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h4>LIME</h4>
+                <p>Local interpretable explanation for each AI prediction.</p>
+            </div>
+
+            <div class="tech-stack-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-server"></i>
+                <h4>Flask</h4>
+                <p>Backend web framework for dashboard and prediction system.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ==================================================
+                EXPLAINABLE AI SECTION
+=================================================== -->
+
+<section class="xai-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="section-badge">
+                    <i class="fa-solid fa-eye"></i>
+                    Explainable AI
+                </div>
+
+                <h2 class="section-title">
+                    Transparent Diagnosis with
+                    <span>Grad-CAM & LIME</span>
+                </h2>
+
+                <p class="section-description">
+                    SkinNova does not only predict the skin lesion class. It also
+                    explains why the model made that prediction by highlighting
+                    important regions of the dermoscopic image.
+                </p>
+
+                <div class="xai-points">
+
+                    <div class="xai-point">
+                        <i class="fa-solid fa-fire"></i>
+                        <div>
+                            <h4>Grad-CAM Heatmap</h4>
+                            <p>Highlights the lesion areas that strongly influenced the AI prediction.</p>
+                        </div>
+                    </div>
+
+                    <div class="xai-point">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <div>
+                            <h4>LIME Explanation</h4>
+                            <p>Shows locally important image regions for better prediction interpretation.</p>
+                        </div>
+                    </div>
+
+                    <div class="xai-point">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <div>
+                            <h4>Clinician Trust</h4>
+                            <p>Improves transparency and supports dermatologist decision-making.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a href="{{ url_for('explain') }}" class="xai-btn">
+                    Explore XAI Module
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <div class="xai-visual-box">
+
+                    <div class="xai-image-card original-card">
+                        <h5>Original Image</h5>
+                        <img
+                            src="{{ url_for('static', filename='images/original-lesion.png') }}"
+                            alt="Original Skin Lesion"
+                        />
+                    </div>
+
+                    <div class="xai-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="xai-image-card heatmap-card-xai">
+                        <h5>Grad-CAM Heatmap</h5>
+                        <img
+                            src="{{ url_for('static', filename='images/gradcam-lesion.png') }}"
+                            alt="Grad-CAM Heatmap"
+                        />
+                    </div>
+
+                    <div class="xai-result-card">
+                        <i class="fa-solid fa-microscope"></i>
+                        <div>
+                            <h4>Prediction: Melanoma</h4>
+                            <p>Confidence: 98.7% • Risk: High</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ==================================================
+        CLINICAL DECISION SUPPORT SECTION
+=================================================== -->
+
+<section class="clinical-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-user-doctor"></i>
+                Clinical Decision Support
+            </div>
+
+            <h2 class="section-title">
+                AI-Assisted
+                <span>Clinical Recommendation</span>
+            </h2>
+
+            <p class="section-description">
+                Beyond disease prediction, SkinNova provides intelligent
+                clinical recommendations by combining lesion classification,
+                confidence estimation, explainable AI, and medical risk
+                assessment to support healthcare professionals.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mt-5">
+
+            <!-- Left Side -->
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="recommendation-card">
+
+                    <h3>
+                        <i class="fa-solid fa-file-waveform"></i>
+                        AI Diagnostic Summary
+                    </h3>
+
+                    <div class="recommendation-item">
+                        <span>Disease</span>
+                        <strong>Melanoma</strong>
+                    </div>
+
+                    <div class="recommendation-item">
+                        <span>Confidence Score</span>
+                        <strong>98.72%</strong>
+                    </div>
+
+                    <div class="recommendation-item">
+                        <span>Risk Category</span>
+                        <span class="risk-high">High Risk</span>
+                    </div>
+
+                    <div class="recommendation-item">
+                        <span>Explainability</span>
+                        <strong>Grad-CAM + LIME</strong>
+                    </div>
+
+                    <div class="recommendation-item">
+                        <span>Severity</span>
+                        <strong>Requires Immediate Evaluation</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <div class="clinical-flow">
+
+                    <div class="flow-box">
+
+                        <div class="flow-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <h5>Prediction</h5>
+
+                        <p>AI classifies the lesion.</p>
+
+                    </div>
+
+                    <div class="flow-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="flow-box">
+
+                        <div class="flow-icon">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+
+                        <h5>Confidence</h5>
+
+                        <p>Model confidence estimation.</p>
+
+                    </div>
+
+                    <div class="flow-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="flow-box">
+
+                        <div class="flow-icon">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+
+                        <h5>Recommendation</h5>
+
+                        <p>Clinical guidance generated.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4" data-aos="zoom-in">
+
+                <div class="risk-card low">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h4>Low Risk</h4>
+
+                    <p>
+                        Routine monitoring is recommended.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+
+                <div class="risk-card medium">
+
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <h4>Moderate Risk</h4>
+
+                    <p>
+                        Dermatologist consultation is advised.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+
+                <div class="risk-card high">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <h4>High Risk</h4>
+
+                    <p>
+                        Immediate clinical examination is strongly recommended.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ==================================================
+            RESEARCH STATISTICS SECTION
+=================================================== -->
+
+<section class="research-stats-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-chart-simple"></i>
+                Research Statistics
+            </div>
+
+            <h2 class="section-title">
+                SkinNova Research
+                <span>Highlights</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova is designed as a complete research-oriented medical AI
+                framework with multi-class classification, explainability,
+                validation, and clinical support.
+            </p>
+
+        </div>
+
+        <div class="research-stats-grid mt-5">
+
+            <div class="research-stat-card" data-aos="zoom-in">
+                <i class="fa-solid fa-database"></i>
+                <h3>10K+</h3>
+                <p>Training Images</p>
+            </div>
+
+            <div class="research-stat-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-virus"></i>
+                <h3>7</h3>
+                <p>Lesion Classes</p>
+            </div>
+
+            <div class="research-stat-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-brain"></i>
+                <h3>2</h3>
+                <p>Hybrid AI Models</p>
+            </div>
+
+            <div class="research-stat-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fa-solid fa-eye"></i>
+                <h3>2</h3>
+                <p>XAI Methods</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==================================================
+            RESEARCH CONTRIBUTIONS SECTION
+=================================================== -->
+
+<section class="research-section">
+
+    <div class="container">
+
+        <div class="section-header text-center" data-aos="fade-up">
+
+            <div class="section-badge mx-auto">
+                <i class="fa-solid fa-flask"></i>
+                Research Contribution
+            </div>
+
+            <h2 class="section-title">
+                Novel Contributions of
+                <span>SkinNova Framework</span>
+            </h2>
+
+            <p class="section-description">
+                SkinNova introduces several research innovations that combine
+                computer vision, hybrid deep learning, explainable AI, and
+                intelligent clinical decision support into a single framework.
+            </p>
+
+        </div>
+
+        <div class="research-timeline">
+
+            <div class="research-card" data-aos="fade-right">
+
+                <div class="research-icon">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+
+                <div class="research-content">
+
+                    <h4>Image Quality Assessment</h4>
+
+                    <p>
+                        Automatically evaluates image quality before prediction,
+                        rejecting blurry and low-quality dermoscopic images.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="research-card" data-aos="fade-left">
+
+                <div class="research-icon">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+
+                <div class="research-content">
+
+                    <h4>Advanced Image Preprocessing</h4>
+
+                    <p>
+                        Integrates Dull Razor hair removal, CLAHE enhancement,
+                        and Bilateral Filtering for improved lesion visibility.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="research-card" data-aos="fade-right">
+
+                <div class="research-icon">
+                    <i class="fa-solid fa-object-group"></i>
+                </div>
+
+                <div class="research-content">
+
+                    <h4>Lesion Segmentation</h4>
+
+                    <p>
+                        Employs U-Net segmentation to isolate lesion regions
+                        before deep learning classification.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="research-card" data-aos="fade-left">
+
+                <div class="research-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div class="research-content">
+
+                    <h4>Hybrid Deep Learning</h4>
+
+                    <p>
+                        Combines EfficientNetV2 and Vision Transformer to learn
+                        both local texture and global contextual features.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="research-card" data-aos="fade-right">
+
+                <div class="research-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <div class="research-content">
+
+                    <h4>Explainable AI</h4>
+
+                    <p>
+                        Grad-CAM and LIME visualize model decisions to improve
+                        transparency and dermatologist confidence.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="research-card" data-aos="fade-left">
+
+                <div class="research-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+
+                <div class="research-content">
+
+                    <h4>Clinical Decision Support</h4>
+
+                    <p>
+                        Generates confidence scores, risk assessment,
+                        recommendations, and downloadable AI-assisted reports.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

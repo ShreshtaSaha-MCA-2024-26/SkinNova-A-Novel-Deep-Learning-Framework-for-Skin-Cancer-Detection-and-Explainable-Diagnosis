@@ -1,0 +1,1017 @@
+{% extends "base.html" %}
+
+{% block title %}
+SkinNova | AI Skin Cancer Detection
+{% endblock %}
+
+{% block content %}
+
+<!-- ===========================================
+Hero Section
+=========================================== -->
+
+<section class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10 text-center">
+
+            <span class="badge bg-primary px-4 py-2 mb-3 fs-6">
+
+                Artificial Intelligence Powered Diagnosis
+
+            </span>
+
+            <h1 class="display-3 fw-bold text-white mb-3">
+
+                <i class="bi bi-heart-pulse-fill text-danger"></i>
+
+                SkinNova AI
+
+            </h1>
+
+            <p class="lead text-light">
+
+                Upload a dermoscopic skin lesion image and let our
+                deep learning model classify it as
+                <strong>Benign</strong> or
+                <strong>Malignant</strong>
+                within seconds.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+Upload Section
+=========================================== -->
+
+<section class="container mb-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-xl-10">
+
+            <div class="card shadow-lg">
+
+                <div class="card-header text-center py-4">
+
+                    <h2 class="fw-bold">
+
+                        <i class="bi bi-cloud-upload-fill"></i>
+
+                        Upload Skin Lesion Image
+
+                    </h2>
+
+                    <p class="mb-0 text-light">
+
+                        Supported Formats :
+                        JPG • JPEG • PNG
+
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    {% if error %}
+
+                    <div class="alert alert-danger">
+
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+
+                        {{ error }}
+
+                    </div>
+
+                    {% endif %}
+
+                    <!-- Upload Form -->
+
+                    <form
+                        action="{{ url_for('detect') }}"
+                        method="POST"
+                        enctype="multipart/form-data"
+                        id="uploadForm">
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+
+                                Choose Skin Lesion Image
+
+                            </label>
+
+                            <input
+                                type="file"
+                                class="form-control"
+                                name="image"
+                                id="imageInput"
+                                accept=".jpg,.jpeg,.png"
+                                required>
+
+                        </div>
+
+                        <!-- Preview -->
+
+                        <div class="text-center mb-4">
+
+                            <img
+                                id="preview"
+                                src="{{ url_for('static', filename='images/preview.png') }}"
+                                class="img-fluid rounded shadow"
+                                style="max-height:350px;">
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button
+                                type="submit"
+                                class="btn btn-success btn-lg">
+
+                                <i class="bi bi-search"></i>
+
+                                Detect Skin Cancer
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <!-- Loading -->
+
+                    <div
+                        id="loading"
+                        class="text-center mt-5"
+                        style="display:none;">
+
+                        <div
+                            class="spinner-border text-primary"
+                            role="status">
+
+                        </div>
+
+                        <h3 class="mt-4">
+
+                            AI is analyzing your image...
+
+                        </h3>
+
+                        <p class="text-muted">
+
+                            Please wait while the AI model analyzes
+                            your skin lesion.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+Detection Result Dashboard
+=========================================== -->
+
+{% if prediction %}
+
+<section id="result-section" class="container mb-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold text-white">
+
+            <i class="bi bi-clipboard2-pulse-fill text-warning"></i>
+
+            Detection Result
+
+        </h2>
+
+        <p class="text-light">
+
+            SkinNova AI has successfully analyzed your skin lesion.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Prediction -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-heart-pulse-fill display-3 text-primary"></i>
+
+                    <h5 class="mt-3">
+
+                        Prediction
+
+                    </h5>
+
+                    {% if prediction == "Malignant" %}
+
+                        <h2 class="text-danger fw-bold">
+
+                            {{ prediction }}
+
+                        </h2>
+
+                        <span class="badge bg-danger fs-6">
+
+                            High Risk
+
+                        </span>
+
+                    {% else %}
+
+                        <h2 class="text-success fw-bold">
+
+                            {{ prediction }}
+
+                        </h2>
+
+                        <span class="badge bg-success fs-6">
+
+                            Low Risk
+
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Confidence -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-speedometer2 display-3 text-success"></i>
+
+                    <h5 class="mt-3">
+
+                        Confidence
+
+                    </h5>
+
+                    <h2 class="fw-bold">
+
+                        {{ confidence }}%
+
+                    </h2>
+
+                    <div class="progress mt-3">
+
+                        <div
+                            class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+                            role="progressbar"
+                            style="width: {{ confidence }}%;">
+
+                            {{ confidence }}%
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Probability -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-bar-chart-line-fill display-3 text-warning"></i>
+
+                    <h5 class="mt-3">
+
+                        Probability
+
+                    </h5>
+
+                    <h2 class="fw-bold">
+
+                        {{ probability }}
+
+                    </h2>
+
+                    <small class="text-muted">
+
+                        Raw AI Output
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Risk Level -->
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-fill-check display-3 text-info"></i>
+
+                    <h5 class="mt-3">
+
+                        Risk Level
+
+                    </h5>
+
+                    {% if prediction == "Malignant" %}
+
+                        <h2 class="text-danger">
+
+                            High Risk
+
+                        </h2>
+
+                        <span class="badge bg-danger">
+
+                            Consult Dermatologist
+
+                        </span>
+
+                    {% else %}
+
+                        <h2 class="text-success">
+
+                            Low Risk
+
+                        </h2>
+
+                        <span class="badge bg-success">
+
+                            Routine Monitoring
+
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+<!-- ===========================================
+Image Visualization
+=========================================== -->
+
+{% if prediction %}
+
+<section class="container mb-5">
+
+    <div class="row g-4">
+
+        <!-- Uploaded Image -->
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-header bg-dark text-center">
+
+                    <h5>
+
+                        <i class="bi bi-image-fill"></i>
+
+                        Uploaded Image
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body text-center">
+
+                    <img
+                        src="{{ url_for('static', filename='uploads/' + filename) }}"
+                        class="img-fluid rounded shadow"
+                        alt="Uploaded Image"
+                        style="max-height:450px;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- GradCAM -->
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-header bg-danger text-center">
+
+                    <h5>
+
+                        <i class="bi bi-fire"></i>
+
+                        AI Attention Heatmap (Grad-CAM)
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body text-center">
+
+                    {% if heatmap %}
+
+                    <img
+                        src="{{ url_for('static', filename='uploads/' + heatmap) }}"
+                        class="img-fluid rounded shadow"
+                        alt="GradCAM"
+                        style="max-height:450px;">
+
+                    {% else %}
+
+                    <img
+                        src="{{ url_for('static', filename='images/gradcam_placeholder.png') }}"
+                        class="img-fluid rounded shadow"
+                        alt="No Heatmap"
+                        style="max-height:450px;">
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+AI Interpretation
+=========================================== -->
+
+<section class="container mb-5">
+
+    <div class="card shadow-lg">
+
+        <div class="card-header">
+
+            <h4>
+
+                <i class="bi bi-cpu-fill"></i>
+
+                AI Interpretation
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if prediction == "Malignant" %}
+
+            <div class="alert alert-danger">
+
+                <h4>
+
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+
+                    Possible Malignant Lesion
+
+                </h4>
+
+                <p>
+
+                    The AI model predicts that this lesion contains visual
+                    characteristics commonly associated with malignant skin cancer.
+
+                </p>
+
+                <ul>
+
+                    <li><strong>Prediction :</strong> {{ prediction }}</li>
+
+                    <li><strong>Confidence :</strong> {{ confidence }}%</li>
+
+                    <li><strong>Risk :</strong> {{ risk }}</li>
+
+                </ul>
+
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-success">
+
+                <h4>
+
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    Likely Benign Lesion
+
+                </h4>
+
+                <p>
+
+                    The lesion appears visually similar to benign skin lesions.
+                    Continue regular monitoring and consult a dermatologist if
+                    any noticeable changes occur.
+
+                </p>
+
+                <ul>
+
+                    <li><strong>Prediction :</strong> {{ prediction }}</li>
+
+                    <li><strong>Confidence :</strong> {{ confidence }}%</li>
+
+                    <li><strong>Risk :</strong> {{ risk }}</li>
+
+                </ul>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+Clinical Recommendation
+=========================================== -->
+
+<section class="container mb-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-center">
+
+            <h4>
+
+                <i class="bi bi-hospital-fill"></i>
+
+                Clinical Recommendation
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if prediction == "Malignant" %}
+
+            <div class="alert alert-danger mb-0">
+
+                <ul class="mb-0">
+
+                    <li>Consult a dermatologist immediately.</li>
+
+                    <li>Consider dermoscopic examination.</li>
+
+                    <li>A biopsy may be required depending on clinical findings.</li>
+
+                    <li>Do not rely solely on AI prediction.</li>
+
+                </ul>
+
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-success mb-0">
+
+                <ul class="mb-0">
+
+                    <li>Continue regular skin monitoring.</li>
+
+                    <li>Use sunscreen regularly.</li>
+
+                    <li>Schedule annual skin examinations.</li>
+
+                    <li>Seek medical advice if the lesion changes.</li>
+
+                </ul>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+Medical Disclaimer
+=========================================== -->
+
+<section class="container mb-5">
+
+    <div class="alert alert-warning shadow">
+
+        <h4>
+
+            <i class="bi bi-shield-exclamation"></i>
+
+            Medical Disclaimer
+
+        </h4>
+
+        <p class="mb-2">
+
+            SkinNova AI is intended for educational and research purposes.
+            The prediction generated by the AI model is not a substitute
+            for professional medical diagnosis.
+
+        </p>
+
+        <p class="mb-0">
+
+            Always consult a qualified dermatologist before making
+            healthcare decisions.
+
+        </p>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+<!-- ===========================================
+Why SkinNova AI
+=========================================== -->
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold text-white">
+
+            Why Choose SkinNova AI?
+
+        </h2>
+
+        <p class="text-light">
+
+            Explainable Deep Learning for Early Skin Cancer Detection
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-lightning-charge-fill display-2 text-warning"></i>
+
+                    <h4 class="mt-4">
+
+                        Fast Detection
+
+                    </h4>
+
+                    <p>
+
+                        EfficientNet CNN analyzes skin lesions in just a few seconds.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-fire display-2 text-danger"></i>
+
+                    <h4 class="mt-4">
+
+                        Explainable AI
+
+                    </h4>
+
+                    <p>
+
+                        Grad-CAM visualization shows which image regions
+                        influenced the prediction.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card shadow-lg h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-lock-fill display-2 text-success"></i>
+
+                    <h4 class="mt-4">
+
+                        Reliable Analysis
+
+                    </h4>
+
+                    <p>
+
+                        Developed for educational, research and AI-assisted
+                        clinical decision support.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+AI Workflow
+=========================================== -->
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold text-white">
+
+            AI Detection Workflow
+
+        </h2>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-upload display-2 text-primary"></i>
+
+                    <h5 class="mt-3">
+
+                        Upload
+
+                    </h5>
+
+                    <p>
+
+                        Upload a dermoscopic image.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-cpu-fill display-2 text-success"></i>
+
+                    <h5 class="mt-3">
+
+                        AI Processing
+
+                    </h5>
+
+                    <p>
+
+                        EfficientNet extracts deep features.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-eye-fill display-2 text-danger"></i>
+
+                    <h5 class="mt-3">
+
+                        Grad-CAM
+
+                    </h5>
+
+                    <p>
+
+                        Highlights the important lesion regions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-file-earmark-medical-fill display-2 text-warning"></i>
+
+                    <h5 class="mt-3">
+
+                        Result
+
+                    </h5>
+
+                    <p>
+
+                        Prediction, confidence and recommendation.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+Action Buttons
+=========================================== -->
+
+<section class="container text-center py-5">
+
+    <a href="{{ url_for('detect') }}" class="btn btn-primary btn-lg me-3">
+
+        <i class="bi bi-arrow-repeat"></i>
+
+        Analyze Another Image
+
+    </a>
+
+    <a href="{{ url_for('home') }}" class="btn btn-outline-light btn-lg">
+
+        <i class="bi bi-house-fill"></i>
+
+        Back to Home
+
+    </a>
+
+</section>
+
+<!-- ===========================================
+End of content block
+=========================================== -->
+
+{% endblock %}
+
+<!-- ===========================================
+Scripts
+=========================================== -->
+
+{% block scripts %}
+
+<script>
+
+const input = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+
+if(input){
+
+    input.addEventListener("change",function(){
+
+        if(this.files.length>0){
+
+            preview.src = URL.createObjectURL(this.files[0]);
+            preview.style.display = "block";
+
+        }
+
+    });
+
+}
+
+const form = document.getElementById("uploadForm");
+
+if(form){
+
+    form.addEventListener("submit",function(){
+
+        document.getElementById("loading").style.display="block";
+
+    });
+
+}
+
+window.onload=function(){
+
+    const loading=document.getElementById("loading");
+
+    if(loading){
+
+        loading.style.display="none";
+
+    }
+
+    {% if prediction %}
+
+    const result=document.getElementById("result-section");
+
+    if(result){
+
+        result.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+    {% endif %}
+
+}
+
+</script>
+
+{% endblock %}

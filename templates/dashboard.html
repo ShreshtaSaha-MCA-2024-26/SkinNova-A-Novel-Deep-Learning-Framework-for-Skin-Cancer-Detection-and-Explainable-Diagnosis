@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}SkinNova | Dashboard{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-page">
+
+  <div class="dashboard-container">
+
+    <div class="dashboard-top">
+      <div>
+        <h2>SkinNova Dashboard</h2>
+        <p>AI skin cancer model analytics and diagnosis summary</p>
+      </div>
+
+      <a href="{{ url_for('detect') }}" class="dash-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Detect Now
+      </a>
+    </div>
+
+    <div class="summary-grid">
+
+      <div class="summary-card welcome-card">
+        <div>
+          <h3>Welcome to SkinNova</h3>
+          <p>Monitor prediction performance, risk status, model metrics and explainable diagnosis results.</p>
+
+          <div class="welcome-mini">
+            <div>
+              <span>Dataset</span>
+              <strong>HAM10000</strong>
+            </div>
+
+            <div>
+              <span>Classes</span>
+              <strong>7</strong>
+            </div>
+          </div>
+        </div>
+
+        <i class="fa-solid fa-microscope"></i>
+      </div>
+
+      <div class="summary-card">
+        <span>Accuracy</span>
+        <h3>96.8%</h3>
+        <p class="up">+2.4% improved</p>
+        <canvas id="miniAccuracyChart"></canvas>
+      </div>
+
+      <div class="summary-card">
+        <span>Confidence</span>
+        <h3>94.2%</h3>
+        <p class="up">Average score</p>
+        <canvas id="confidenceChart"></canvas>
+      </div>
+
+    </div>
+
+    <div class="metric-grid">
+
+      <div class="metric-card">
+        <i class="fa-solid fa-crosshairs"></i>
+        <div>
+          <h4>95.9%</h4>
+          <p>Precision</p>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <i class="fa-solid fa-rotate"></i>
+        <div>
+          <h4>95.6%</h4>
+          <p>Recall</p>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <i class="fa-solid fa-award"></i>
+        <div>
+          <h4>95.7%</h4>
+          <p>F1 Score</p>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <div>
+          <h4>98.1%</h4>
+          <p>ROC-AUC</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="dash-card">
+        <div class="card-title">
+          <h4>Training Summary</h4>
+          <span>Last 10 Epochs</span>
+        </div>
+
+        <canvas id="trainingChart"></canvas>
+      </div>
+
+      <div class="dash-card">
+        <div class="card-title">
+          <h4>Class Distribution</h4>
+          <span>HAM10000</span>
+        </div>
+
+        <canvas id="distributionChart"></canvas>
+      </div>
+
+      <div class="dash-card">
+        <div class="card-title">
+          <h4>Risk Analysis</h4>
+          <span>Predictions</span>
+        </div>
+
+        <canvas id="riskChart"></canvas>
+      </div>
+
+      <div class="dash-card">
+        <div class="card-title">
+          <h4>Class Accuracy</h4>
+          <span>7 Classes</span>
+        </div>
+
+        <canvas id="classAccuracyChart"></canvas>
+      </div>
+
+    </div>
+
+    <div class="bottom-grid">
+
+      <div class="table-card">
+        <div class="card-title">
+          <h4>Recent Predictions</h4>
+          <span>Today</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table dash-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Prediction</th>
+                <th>Confidence</th>
+                <th>Risk</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>ISIC_001</td>
+                <td>Melanoma</td>
+                <td>98.7%</td>
+                <td><span class="badge-risk high">High</span></td>
+                <td><span class="badge-status">Done</span></td>
+              </tr>
+
+              <tr>
+                <td>ISIC_002</td>
+                <td>Nevus</td>
+                <td>94.3%</td>
+                <td><span class="badge-risk low">Low</span></td>
+                <td><span class="badge-status">Done</span></td>
+              </tr>
+
+              <tr>
+                <td>ISIC_003</td>
+                <td>BCC</td>
+                <td>91.5%</td>
+                <td><span class="badge-risk medium">Medium</span></td>
+                <td><span class="badge-status">Done</span></td>
+              </tr>
+
+              <tr>
+                <td>ISIC_004</td>
+                <td>BKL</td>
+                <td>89.8%</td>
+                <td><span class="badge-risk low">Low</span></td>
+                <td><span class="badge-status">Done</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="card-title">
+          <h4>System Modules</h4>
+          <span>Active</span>
+        </div>
+
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Image Quality Assessment</li>
+          <li><i class="fa-solid fa-check"></i> Hair Removal</li>
+          <li><i class="fa-solid fa-check"></i> Lesion Segmentation</li>
+          <li><i class="fa-solid fa-check"></i> Grad-CAM Explanation</li>
+          <li><i class="fa-solid fa-check"></i> Clinical Recommendation</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

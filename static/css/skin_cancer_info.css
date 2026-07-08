@@ -1,0 +1,466 @@
+.skin-info-page {
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.skin-container {
+  width: 86%;
+  max-width: 1240px;
+  margin: auto;
+}
+
+.skin-hero {
+  padding: 150px 0 95px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.15), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.15), transparent 35%),
+    linear-gradient(135deg, #f8fafc, #ecfeff);
+}
+
+.skin-badge,
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #ecfdf5;
+  color: #0f766e;
+  padding: 9px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.skin-hero h1 {
+  max-width: 920px;
+  margin: auto;
+  color: #0f172a;
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.skin-hero p {
+  max-width: 850px;
+  margin: 22px auto 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Common */
+
+.skin-section,
+.types-section,
+.abcde-section,
+.risk-section,
+.ai-role-section,
+.info-cta {
+  padding: 100px 0;
+}
+
+.types-section,
+.risk-section,
+.info-cta {
+  background: linear-gradient(135deg, #f8fafc, #ecfeff);
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 55px;
+}
+
+.section-heading h2,
+.info-content h2,
+.ai-role-box h2 {
+  color: #0f172a;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.section-heading p,
+.info-content p,
+.ai-role-box p {
+  color: #64748b;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+/* Overview */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.info-image {
+  background: linear-gradient(135deg, #f8fafc, #ecfeff);
+  padding: 25px;
+  border-radius: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+}
+
+.info-image img {
+  width: 100%;
+  border-radius: 22px;
+}
+
+.warning-box {
+  display: flex;
+  gap: 15px;
+  background: #fff7ed;
+  border-left: 5px solid #f97316;
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 25px;
+}
+
+.warning-box i {
+  color: #f97316;
+  font-size: 22px;
+  margin-top: 3px;
+}
+
+.warning-box p {
+  margin: 0;
+  color: #9a3412;
+  font-weight: 700;
+}
+
+/* Types */
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.type-card {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+  transition: 0.3s ease;
+}
+
+.type-card:hover,
+.abcde-card:hover,
+.risk-factor:hover {
+  transform: translateY(-8px);
+}
+
+.type-card i {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.type-card h4 {
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.type-card p {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.risk-tag {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.risk-tag.high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.risk-tag.medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.risk-tag.low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* ABCDE */
+
+.abcde-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.abcde-card {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px 20px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+  transition: 0.3s ease;
+}
+
+.abcde-card span {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.abcde-card h4 {
+  color: #0f172a;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.abcde-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Risks */
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.risk-factor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.06);
+  transition: 0.3s ease;
+}
+
+.risk-factor i {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+}
+
+.risk-factor span {
+  color: #334155;
+  font-weight: 800;
+}
+
+/* AI Role */
+
+.ai-role-box {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 35px;
+  align-items: center;
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 45px;
+  box-shadow: 0 25px 60px rgba(14, 165, 233, 0.25);
+}
+
+.ai-role-box .section-label {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.ai-role-box h2,
+.ai-role-box p {
+  color: #ffffff;
+}
+
+.ai-role-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+}
+
+.ai-role-box li {
+  margin-bottom: 13px;
+  font-weight: 800;
+}
+
+.ai-role-box li i {
+  margin-right: 8px;
+}
+
+.ai-card {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 26px;
+  padding: 35px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.ai-card i {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.ai-card h3 {
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.ai-card p {
+  margin: 0;
+}
+
+/* CTA */
+
+.cta-box {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 30px;
+  padding: 55px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.cta-box h2 {
+  font-size: 38px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.cta-box p {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-buttons a {
+  background: #ffffff;
+  color: #0f766e;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.cta-buttons .outline-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .types-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .abcde-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .skin-hero h1 {
+    font-size: 40px;
+  }
+
+  .info-grid,
+  .ai-role-box {
+    grid-template-columns: 1fr;
+  }
+
+  .info-content,
+  .section-heading {
+    text-align: center;
+  }
+
+  .risk-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .skin-container {
+    width: 92%;
+  }
+
+  .skin-hero {
+    padding: 125px 0 70px;
+  }
+
+  .skin-hero h1 {
+    font-size: 31px;
+  }
+
+  .section-heading h2,
+  .info-content h2,
+  .ai-role-box h2 {
+    font-size: 30px;
+  }
+
+  .skin-section,
+  .types-section,
+  .abcde-section,
+  .risk-section,
+  .ai-role-section,
+  .info-cta {
+    padding: 70px 0;
+  }
+
+  .types-grid,
+  .abcde-grid,
+  .risk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-role-box,
+  .cta-box {
+    padding: 35px 22px;
+  }
+
+  .cta-box h2 {
+    font-size: 28px;
+  }
+}

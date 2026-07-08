@@ -1,0 +1,379 @@
+/* =====================================================
+   Google Font
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =====================================================
+   Global
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+
+    min-height:100vh;
+
+    color:#222;
+
+}
+
+/* =====================================================
+   Navbar
+===================================================== */
+
+.navbar{
+
+    background:rgba(13,17,23,.95)!important;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.navbar-brand{
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+/* =====================================================
+   Main Card
+===================================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* =====================================================
+   Header
+===================================================== */
+.card-header h5{
+    text-align: center;
+    color : #fff !important;
+}
+.card-header{
+
+    background:linear-gradient(90deg,#0d6efd,#6610f2)!important;
+
+    color:rgb(141, 95, 95) !important;
+
+    border:none;
+
+}
+
+/* =====================================================
+   Upload Input
+===================================================== */
+
+input[type=file]{
+
+    border:3px dashed #0d6efd;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    background:#f8fbff;
+
+}
+
+input[type=file]:hover{
+
+    background:#eaf4ff;
+
+    border-color:#6610f2;
+
+}
+
+/* =====================================================
+   Buttons
+===================================================== */
+
+.btn-success{
+
+    border-radius:12px;
+
+    padding:15px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(25,135,84,.35);
+
+}
+
+/* =====================================================
+   Preview Images
+===================================================== */
+
+img{
+
+    border-radius:18px;
+
+    transition:.4s;
+
+}
+
+img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* =====================================================
+   Prediction Cards
+===================================================== */
+
+.card-body h2{
+
+    font-weight:700;
+
+}
+
+.card-body h5{
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+/* =====================================================
+   Progress Bar
+===================================================== */
+
+.progress{
+
+    height:22px;
+
+    border-radius:20px;
+
+    background:#dfe9f3;
+
+}
+
+.progress-bar{
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+/* =====================================================
+   Prediction Colors
+===================================================== */
+
+.text-danger{
+
+    color:#dc3545!important;
+
+}
+
+.text-success{
+
+    color:#198754!important;
+
+}
+
+/* =====================================================
+   Heatmap Images
+===================================================== */
+
+.card img{
+
+    border-radius:15px;
+
+    border:3px solid #eee;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+/* =====================================================
+   Spinner
+===================================================== */
+
+#loading{
+
+    animation:fadeIn .4s ease;
+
+}
+
+.spinner-border{
+
+    width:80px!important;
+
+    height:80px!important;
+
+}
+
+/* =====================================================
+   Footer
+===================================================== */
+
+footer{
+
+    margin-top:60px;
+
+    background:#111827;
+
+}
+
+footer h5{
+
+    font-weight:700;
+
+}
+
+footer p{
+
+    margin-bottom:5px;
+
+}
+
+/* =====================================================
+   Alerts
+===================================================== */
+
+.alert{
+
+    border-radius:12px;
+
+}
+
+/* =====================================================
+   Animations
+===================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.card{
+
+    animation:fadeIn .5s ease;
+
+}
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media(max-width:992px){
+
+.card{
+
+    margin-bottom:25px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.card-header h2{
+
+    font-size:24px;
+
+}
+
+.btn-success{
+
+    font-size:16px;
+
+}
+
+.navbar-brand{
+
+    font-size:18px;
+
+}
+
+img{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.container{
+
+    padding:15px;
+
+}
+
+.card-body{
+
+    padding:20px;
+
+}
+
+.card-header{
+
+    padding:20px;
+
+}
+
+}

@@ -1,0 +1,24 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "600c560c-7e0f-4ed3-8093-efc3767d6be0",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1783460830967"
+        }
+      },
+      "favorite": {
+        "name": "SkinNova Local"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/",
+        "oidc": {}
+      }
+    }
+  ]
+}

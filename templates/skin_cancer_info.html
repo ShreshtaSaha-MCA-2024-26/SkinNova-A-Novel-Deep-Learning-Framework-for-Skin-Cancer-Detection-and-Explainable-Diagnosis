@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block title %}SkinNova | Skin Cancer Information{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/skin_cancer_info.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="skin-info-page">
+
+  <!-- HERO -->
+  <div class="skin-hero">
+    <div class="skin-container">
+      <span class="skin-badge">
+        <i class="fa-solid fa-shield-virus"></i>
+        Skin Cancer Awareness
+      </span>
+
+      <h1>Understand Skin Cancer, Lesions & Early Detection</h1>
+
+      <p>
+        Learn about common skin lesion types, warning signs, risk factors,
+        diagnosis methods, and how AI-based decision support can assist early screening.
+      </p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="skin-section">
+    <div class="skin-container">
+      <div class="info-grid">
+
+        <div class="info-content" data-aos="fade-right">
+          <span class="section-label">Overview</span>
+          <h2>What is Skin Cancer?</h2>
+          <p>
+            Skin cancer occurs when abnormal skin cells grow uncontrollably.
+            It can appear as a new spot, a changing mole, a non-healing sore,
+            or an unusual lesion. Early detection improves the chance of
+            successful treatment.
+          </p>
+
+          <div class="warning-box">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p>
+              This page is for educational purposes only and does not replace
+              professional medical diagnosis.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-image" data-aos="fade-left">
+          <img src="{{ url_for('static', filename='images/skin-cancer-info.png') }}" alt="Skin Cancer Information">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="types-section">
+    <div class="skin-container">
+
+      <div class="section-heading text-center">
+        <span class="section-label">Major Types</span>
+        <h2>Common Skin Lesion Categories</h2>
+        <p>SkinNova focuses on seven important lesion classes used in dermoscopic AI research.</p>
+      </div>
+
+      <div class="types-grid">
+
+        <div class="type-card">
+          <i class="fa-solid fa-virus"></i>
+          <h4>Melanoma</h4>
+          <p>A dangerous skin cancer type that can spread quickly if not detected early.</p>
+          <span class="risk-tag high">High Risk</span>
+        </div>
+
+        <div class="type-card">
+          <i class="fa-solid fa-circle-dot"></i>
+          <h4>Melanocytic Nevus</h4>
+          <p>Common mole-like lesion, usually benign but should be monitored for changes.</p>
+          <span class="risk-tag low">Low Risk</span>
+        </div>
+
+        <div class="type-card">
+          <i class="fa-solid fa-disease"></i>
+          <h4>Basal Cell Carcinoma</h4>
+          <p>A common skin cancer that often grows slowly but needs medical attention.</p>
+          <span class="risk-tag medium">Moderate Risk</span>
+        </div>
+
+        <div class="type-card">
+          <i class="fa-solid fa-sun"></i>
+          <h4>Actinic Keratosis</h4>
+          <p>A rough, scaly lesion caused by sun damage and may become cancerous.</p>
+          <span class="risk-tag medium">Moderate Risk</span>
+        </div>
+
+        <div class="type-card">
+          <i class="fa-solid fa-layer-group"></i>
+          <h4>Benign Keratosis</h4>
+          <p>A non-cancerous lesion that may visually resemble other skin diseases.</p>
+          <span class="risk-tag low">Low Risk</span>
+        </div>
+
+        <div class="type-card">
+          <i class="fa-solid fa-circle"></i>
+          <h4>Dermatofibroma</h4>
+          <p>A usually harmless skin growth that appears as a firm small bump.</p>
+          <span class="risk-tag low">Low Risk</span>
+        </div>
+
+        <div class="type-card">
+          <i class="fa-solid fa-droplet"></i>
+          <h4>Vascular Lesion</h4>
+          <p>Lesions related to blood vessels, often red, purple, or blue in color.</p>
+          <span class="risk-tag low">Low Risk</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABCDE -->
+  <section class="abcde-section">
+    <div class="skin-container">
+
+      <div class="section-heading text-center">
+        <span class="section-label">Warning Signs</span>
+        <h2>ABCDE Rule for Skin Lesion Screening</h2>
+        <p>The ABCDE rule helps identify suspicious mole or lesion changes.</p>
+      </div>
+
+      <div class="abcde-grid">
+
+        <div class="abcde-card"><span>A</span><h4>Asymmetry</h4><p>One half of the lesion does not match the other half.</p></div>
+        <div class="abcde-card"><span>B</span><h4>Border</h4><p>Irregular, blurred, or uneven lesion borders.</p></div>
+        <div class="abcde-card"><span>C</span><h4>Color</h4><p>Multiple colors or uneven pigmentation inside the lesion.</p></div>
+        <div class="abcde-card"><span>D</span><h4>Diameter</h4><p>Lesion larger than 6 mm or increasing in size.</p></div>
+        <div class="abcde-card"><span>E</span><h4>Evolution</h4><p>Any change in size, shape, color, bleeding, or symptoms.</p></div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RISK FACTORS -->
+  <section class="risk-section">
+    <div class="skin-container">
+
+      <div class="section-heading text-center">
+        <span class="section-label">Risk Factors</span>
+        <h2>Who Should Be More Careful?</h2>
+      </div>
+
+      <div class="risk-grid">
+
+        <div class="risk-factor"><i class="fa-solid fa-sun"></i><span>Excessive UV exposure</span></div>
+        <div class="risk-factor"><i class="fa-solid fa-person-rays"></i><span>History of sunburn</span></div>
+        <div class="risk-factor"><i class="fa-solid fa-dna"></i><span>Family history</span></div>
+        <div class="risk-factor"><i class="fa-solid fa-circle-dot"></i><span>Many or unusual moles</span></div>
+        <div class="risk-factor"><i class="fa-solid fa-shield-virus"></i><span>Weak immune system</span></div>
+        <div class="risk-factor"><i class="fa-solid fa-user-clock"></i><span>Older age</span></div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AI ROLE -->
+  <section class="ai-role-section">
+    <div class="skin-container">
+
+      <div class="ai-role-box" data-aos="zoom-in">
+
+        <div>
+          <span class="section-label">AI Support</span>
+          <h2>How SkinNova Helps</h2>
+
+          <p>
+            SkinNova supports screening by analyzing dermoscopic images,
+            identifying lesion class, showing confidence score, highlighting
+            important regions using XAI, and generating clinical recommendation.
+          </p>
+
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Automatic lesion classification</li>
+            <li><i class="fa-solid fa-check"></i> Grad-CAM and LIME explanation</li>
+            <li><i class="fa-solid fa-check"></i> Confidence score and risk level</li>
+            <li><i class="fa-solid fa-check"></i> Downloadable diagnostic report</li>
+          </ul>
+        </div>
+
+        <div class="ai-card">
+          <i class="fa-solid fa-brain"></i>
+          <h3>Explainable AI</h3>
+          <p>Transparent medical image analysis for research and clinical support.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="info-cta">
+    <div class="skin-container">
+      <div class="cta-box">
+        <h2>Start AI-Based Skin Lesion Analysis</h2>
+        <p>Upload a dermoscopic image and view prediction, confidence score, heatmap, and report.</p>
+
+        <div class="cta-buttons">
+          <a href="{{ url_for('detect') }}">Start Detection</a>
+          <a href="{{ url_for('research') }}" class="outline-btn">Explore Research</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/skin_cancer_info.js') }}"></script>
+{% endblock %}
